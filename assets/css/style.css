@@ -147,6 +147,7 @@ body {
   border-radius:1rem; padding:1.75rem;
   transition: transform .2s ease, box-shadow .2s ease;
   box-shadow:0 8px 24px rgba(0,0,0,.06);
+  text-align: center;
 }
 .card-soft:hover{ transform: translateY(-6px); box-shadow:0 16px 36px rgba(0,0,0,.1); }
 .card-soft h6{ font-weight:600; color:var(--brand); letter-spacing:.3px; }
@@ -173,6 +174,11 @@ footer{ background:var(--bg-light); font-size:.9rem; }
 
 /* 輸入框大小 */
 .input-group .form-control { font-size: 1rem; }
+
+/* 讓區塊內文字置中 */
+.anchor .container {
+  text-align: center;
+}
 
 /* ===== 桌面優化 (≥992px) ===== */
 @media (min-width: 992px){
@@ -213,6 +219,7 @@ footer{ background:var(--bg-light); font-size:.9rem; }
     font-size: 16px;
   }
 }
+
 /* 區塊標題裝飾（section-title） */
 .section-title {
   font-size: 2rem;
@@ -236,4 +243,23 @@ footer{ background:var(--bg-light); font-size:.9rem; }
   border-radius: 2px;
   background: linear-gradient(90deg, #4f46e5, #6366f1);
   opacity: 0.85;
+}
+
+/* 調整卡片容器的樣式，確保靠左對齊 */
+.card-container {
+    display: flex;
+    justify-content: flex-start; /* 卡片靠左對齊 */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px; /* 卡片之間的間距 */
+    margin: 0; /* 移除居中效果 */
+}
+
+/* 調整卡片的樣式 */
+.card {
+    text-align: left; /* 卡片內文字靠左對齊 */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #fff;
 }
