@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>回首餘暉</title>
+  <meta name="description" content="回首餘暉 - Minecraft 1.20.2 無模組伺服器介紹">
+
+  <!-- 一律使用 JPG -->
+  <link rel="icon" type="image/jpeg" href="https://images-ext-1.discordapp.net/external/GG4bu76x3ReTOW5v6NDDd1r0gl0tSNG-DOToPeld0lo/%3Fsize%3D2048/https/cdn.discordapp.com/icons/1200415671092248636/a_d25b764223ef22be020e2577c27ce54a.gif?width=639&height=639">
+
+  <!-- 你的 CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.staticfile.net/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.staticfile.net/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- 導覽列：上=Logo置中，下=選單置中 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+  <div class="container">
+
+    <!-- 上：LOGO 置中 -->
+    <a class="navbar-brand d-flex align-items-center mx-auto" href="#">
+      <div class="logo">
+        <img src="https://images-ext-1.discordapp.net/external/GG4bu76x3ReTOW5v6NDDd1r0gl0tSNG-DOToPeld0lo/%3Fsize%3D2048/https/cdn.discordapp.com/icons/1200415671092248636/a_d25b764223ef22be020e2577c27ce54a.gif?width=639&height=639" alt="回首餘暉 Logo">
+        <span>回首餘暉</span>
+      </div>
+    </a>
+
+    <!-- 手機：漢堡按鈕（點擊展開/收合下方選單） -->
+    <button class="navbar-toggler mb-2" type="button"
+            data-bs-toggle="collapse" data-bs-target="#nav"
+            aria-controls="nav" aria-expanded="false" aria-label="切換導覽">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- 下：框框選單（可收合） -->
+    <div id="nav" class="collapse navbar-collapse">
+      <ul class="menu mx-auto">
+        <li><a href="#features">特色</a></li>
+        <li><a href="#weapons">武器特點</a></li>
+        <li><a href="#style-game">遊戲風格</a></li>
+        <li><a href="#style-build">建築風格</a></li>
+        <li><a href="#lore">背景故事</a></li>
+        <li><a href="#join">加入方式</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero py-5">
+  <div class="container py-4">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-7">
+        <div class="d-flex gap-2 mb-3">
+          <span class="tag"><i class="bi bi-joystick me-1"></i>Minecraft 1.20.2</span>
+          <span class="tag"><i class="bi bi-box me-1"></i>無模組</span>
+          <span class="tag">生存 / 建築 / 角色扮演</span>
+          <span class="tag">熱烈招生</span>
+          <span class="tag">營運人好</span>
+        </div>
+        <h1 class="display-6 fw-bold mb-2">回首餘暉</h1>
+        <p class="lead text-muted mb-4">
+          低延遲、生存與建築共存的輕敘事伺服器。主打公平、合作、與定期活動。
+        </p>
+
+        <!-- IP + 複製按鈕 -->
+        <div class="input-group input-group-lg mb-3" style="max-width:560px;">
+          <span class="input-group-text"><i class="bi bi-hdd-network"></i></span>
+          <input id="ipField" type="text" class="form-control" value="mc.twiliscence.com" readonly>
+          <button id="copyBtn" class="btn btn-brand"><i class="bi bi-clipboard"></i> 複製 IP</button>
+        </div>
+
+        <!-- Discord 連結 -->
+        <div class="d-flex flex-wrap gap-2">
+          <a class="btn btn-outline-secondary btn-lg" href="https://discord.gg/KQxxyN6mFz" target="_blank" rel="noopener">
+            <i class="bi bi-discord me-1"></i> 官方 Discord
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <img src="https://images-ext-1.discordapp.net/external/DpwKNjmpp30mzqrICzO9hvFYJ0m3Nbwb6WudncU714c/%3Fsize%3D2048/https/cdn.discordapp.com/banners/1200415671092248636/b4f572991be5f65a28182745bab49420.jpg?format=webp&width=2063&height=1160" class="img-fluid rounded-4 border" alt="伺服器主視覺">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 特色 -->
+<section id="features" class="py-5 anchor">
+  <div class="container">
+    <h2 class="section-title">特色</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft p-4 h-100">
+          <h6 class="mb-1"><i class="bi bi-lightning-charge-fill me-1 text-primary"></i> 低延遲體驗</h6>
+          <p class="text-muted small mb-0">伺服端精簡設定、合理視距與實體上限，維持穩定 TPS。</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft p-4 h-100">
+          <h6 class="mb-1"><i class="bi bi-people-fill me-1 text-primary"></i> 友善社群</h6>
+          <p class="text-muted small mb-0">自治規範、公平懲處，活動與建築合作常態舉辦。</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft p-4 h-100">
+          <h6 class="mb-1"><i class="bi bi-shield-check me-1 text-primary"></i> 公平機制</h6>
+          <p class="text-muted small mb-0">無 Pay to Win，純裝飾型回饋與紀念徽章。</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft p-4 h-100">
+          <h6 class="mb-1"><i class="bi bi-calendar-event me-1 text-primary"></i> 定期活動</h6>
+          <p class="text-muted small mb-0">每週小挑戰、月度主題賽季與建築展覽。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 武器特點 -->
+<section id="weapons" class="py-5 bg-light anchor">
+  <div class="container">
+    <h2 class="section-title">武器特點</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card-soft p-4 h-100 bg-white">
+          <h6 class="mb-2">近戰平衡</h6>
+          <ul class="text-muted small mb-0">
+            <li>劍與斧定位清晰：劍穩定輸出、斧爆發高冷卻。</li>
+            <li>盾反與間距控制強化，鼓勵走位與時機判斷。</li>
+            <li>附魔建議：銳利/亡靈剋星依場景自由選擇。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card-soft p-4 h-100 bg-white">
+          <h6 class="mb-2">遠程趣味</h6>
+          <ul class="text-muted small mb-0">
+            <li>弓箭彈道保留原汁原味，強調預判與壓制。</li>
+            <li>煙火弩限定在活動場合，避免常駐破壞平衡。</li>
+            <li>藥水/滯留雲霧使用限制明確，確保公平性。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 遊戲風格 -->
+<section id="style-game" class="py-5 anchor">
+  <div class="container">
+    <h2 class="section-title">遊戲風格</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="card-soft p-4 h-100">
+          <h6 class="mb-1">生存為本</h6>
+          <p class="text-muted small mb-0">原版節奏、合乎常理的死亡懲罰與資源循環。</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-soft p-4 h-100">
+          <h6 class="mb-1">合作導向</h6>
+          <p class="text-muted small mb-0">公共基建、共享倉儲、團隊活動與任務看板。</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-soft p-4 h-100">
+          <h6 class="mb-1">輕競技</h6>
+          <p class="text-muted small mb-0">限定場域 PVP/迷你賽事，避免干擾日常生存。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 建築風格 -->
+<section id="style-build" class="py-5 bg-light anchor">
+  <div class="container">
+    <h2 class="section-title">建築風格</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card-soft p-4 h-100 bg-white">
+          <h6 class="mb-2">主世界聚落</h6>
+          <p class="text-muted small mb-0">中世紀 × 低幻想：石木結構、斜屋頂、暖色燈源與植栽點綴。</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card-soft p-4 h-100 bg-white">
+          <h6 class="mb-2">地獄/終界主題</h6>
+          <p class="text-muted small mb-0">黑紅對比與紫色光源，走廊與拱頂突出史詩氛圍。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 背景故事 -->
+<section id="lore" class="py-5 anchor">
+  <div class="container">
+    <h2 class="section-title">背景故事</h2>
+    <div class="card-soft p-4">
+      <p class="mb-0 text-muted">
+        在此撰寫你的世界觀簡述（150–300 字）。例如：太古文明遺跡蘊含紅石秘能，
+        流亡者在群山之間重建家園；每月展開新的篇章活動，推進主線與支線。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 加入方式 -->
+<section id="join" class="py-5 bg-light anchor">
+  <div class="container">
+    <h2 class="section-title">加入方式</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-10">
+        <div class="card-soft p-4 bg-white">
+          <div class="row g-3 align-items-center">
+            <div class="col-md-4">
+              <div class="p-3 text-center border rounded-4 h-100">
+                <div class="fw-bold">版本</div>
+                <div class="text-muted">Minecraft <b>1.20.2</b></div>
+                <div class="small text-muted">原版 / <b>無模組</b></div>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="d-flex flex-wrap gap-2">
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-hdd-network"></i></span>
+                  <input id="ipField2" type="text" class="form-control" value="mc.twiliscence.com" readonly>
+                  <button id="copyBtn2" class="btn btn-brand"><i class="bi bi-clipboard"></i> 複製 IP</button>
+                </div>
+                <a class="btn btn-outline-secondary" href="https://discord.gg/KQxxyN6mFz" target="_blank" rel="noopener">
+                  <i class="bi bi-discord me-1"></i> Discord 連結
+                </a>
+              </div>
+              <p class="small text-muted mt-2 mb-0">第一次進服建議先加入 Discord 了解規範與活動資訊。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 頁尾 -->
+<footer class="py-4 border-top">
+  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+    <div class="small text-muted">© <span id="y"></span> 回首餘暉</div>
+    <div class="small"></div>
+  </div>
+</footer>
+
+<!-- JS -->
+<script src="https://cdn.staticfile.net/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
