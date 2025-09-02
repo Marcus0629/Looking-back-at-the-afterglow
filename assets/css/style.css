@@ -3,6 +3,8 @@
   --text-dark: #1f2937;  /* 深灰文字 */
   --text-muted: #6b7280; /* 淺灰文字 */
   --bg-light: #f9fafb;   /* 淺灰背景 */
+  --bg-image: none;      /* 可被 JS 設定為背景圖片 URL */
+  --bg-overlay: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(250,250,255,0.6));
 }
 
 * { box-sizing: border-box; }
@@ -14,6 +16,44 @@ body {
   color: var(--text-dark);
   background-color: #fff;
   line-height: 1.7;
+  /* 預設套用 site-background 的話會顯示動態背景層 */
+}
+
+/* 全站背景容器：可顯示預設動畫/漸層，或在有圖片時由 --bg-image 覆蓋 */
+.site-background::before{
+  content: "";
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  z-index: -1;
+  background-image: var(--bg-image), radial-gradient(circle at 10% 10%, rgba(79,70,229,0.12), transparent 15%), radial-gradient(circle at 90% 90%, rgba(99,102,241,0.08), transparent 18%), linear-gradient(180deg, #eef2ff 0%, #ffffff 60%);
+  background-size: cover, 180px 180px, 240px 240px, cover;
+  background-repeat: no-repeat, repeat, repeat, no-repeat;
+  background-position: center, left top, right bottom, center;
+  transition: opacity .6s ease, filter .6s ease;
+  opacity: 1;
+  filter: saturate(1) blur(0px);
+}
+
+/* 沒有圖時使用微動畫漸層 */
+.site-background:not(.has-bg-image)::before{
+  background-image: radial-gradient(circle at 10% 10%, rgba(79,70,229,0.09), transparent 12%), radial-gradient(circle at 90% 90%, rgba(99,102,241,0.06), transparent 14%), linear-gradient(180deg, #eef2ff 0%, #ffffff 60%);
+  background-size: 180px 180px, 240px 240px, cover;
+  animation: subtle-pan 18s linear infinite;
+}
+
+/* 小幅平移動畫，製造「會動的背景」感覺 */
+@keyframes subtle-pan{
+  0%{ background-position: left top, right bottom, center; }
+  50%{ background-position: 10% 20%, 80% 70%, center; }
+  100%{ background-position: left top, right bottom, center; }
+}
+
+/* 圖片載入成功時，使用 --bg-image 作為最上層圖層，並可加上模糊/亮度效果 */
+.site-background.has-bg-image::before{
+  background-image: var(--bg-image), linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.02));
+  background-size: cover, cover;
+  background-position: center;
+  animation: none;
 }
 
 /* ===== 導覽列 ===== */
