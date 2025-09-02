@@ -263,3 +263,14 @@ footer{ background:var(--bg-light); font-size:.9rem; }
     border-radius: 10px;
     background-color: #fff;
 }
+
+/* 複製 IP 按鈕的樣式 */
+#copyBtn, #copyBtn2 {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 調整複製 IP 按鈕的 hover 樣式，使效果更鮮明 */
+#copyBtn:hover, #copyBtn2:hover {
+    background-color: #e0e0e0; /* 使用更深的背景色 */
+    color: #000; /* 使用更亮的文字顏色 */
+}
